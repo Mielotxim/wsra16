@@ -9,8 +9,8 @@
 		<br>
 			<div class="col-md-offset-2">
 			<form id="formularioa" name="formularioa" method="POST" onSubmit="./login.php">
-				<p>Erabiltzailea: <input type="text" id="erab" placeholder="Erabiltzailea" ></input></p>
-				<p>Pasahitza: <input type="password" id="pass"></input></p>
+				<p>Erabiltzailea: <input type="email" name="erab" id="erab" placeholder="Erabiltzailea" ></input></p>
+				<p>Pasahitza: <input type="password" name="pass" id="pass"></input></p>
 				<input type="submit" value="Ok" id="ok"></input>
 			</form>
 			</div>
@@ -21,6 +21,13 @@
 
 <?php
 	if(isset($_POST['erab'],$_POST['pass'])){
-		echo "va bien";
+		$eposta = $_POST['erab'];
+		$pasahitza = $_POST['pass'];
+		include ("./konektatu.php");
+		$giz = $niremysqli->query("SELECT Pasahitza FROM erabiltzailea WHERE Eposta='$eposta'");
+		$row = $giz->fetch_assoc();
+		if($pasahitza===$row['Pasahitza']){
+			header("location:./photo.php");
+		}
 	}
 ?>
