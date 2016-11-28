@@ -20,7 +20,7 @@
 </html>
 
 <?php
-	if(isset($_POST['erab'],$_POST['pass']){
+	if(isset($_POST['erab'],$_POST['pass'])){
 		echo "va bien";
 	}
 ?>
