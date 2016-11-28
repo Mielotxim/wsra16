@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="tipo_contenido" content="text/html;" http-equiv="content-type" charset="utf-8">
+		<title>Erregistratu</title>
+		<!--<link rel='stylesheet' type='text/css' href='stylesPWS/style.css' />-->
+		<link rel="stylesheet" href="./css/bootstrap.min.css" />
+		<link rel="stylesheet" href="./css/custom.min.css" />
+		<script src="./js/erregistro.js"></script>
+	</head>
+	<body style="background-color:#E6E6E6;">
+		<div class="jumbotron" id="jumbo" style="background-color:#48F87C; border-style:solid;border-color:#05A417;">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<center><h1>PHOTOQUE</h1></center>
+				</div>
+				<div class="col-md-1">
+					<div class="row"><button onclick="location.href='./php/login.php'">LogIn</button></div>
+					<div class="row"><button onclick="location.href='./php/signup.php'">SingUp</button></div>
+				</div>
+			</div>
+			<div class="row">
+				<center><h5>YOUR RUSKY PHOTOS</h5></center>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<center><form onsubmit="return balioztatu(this.izena.value, this.eposta.value, this.pass.value, this.passKonf.value)" method="post" action="./php/erregistro.php">
+				<p>Izena: <input type="text" id="izena" name="izena" placeholder="Izena" ></input><b>&nbsp*</b></p>
+				<p>Abizenak: <input type="text" id="abizena" name="abizenak" placeholder="Abizenak" ></input></p>
+				<p>Eposta: <input type="email" id="eposta" name="eposta" placeholder="abididea@adibide.com" ></input><b>&nbsp*</b></p>
+				<p>Pasahitza: <input type="password" id="pass" name="pass" placeholder="Pasahitza"></input><b>&nbsp*</b></p>
+				<p>Konfirmatu pasahitza: <input type="password" id="passKonf" name="passKonf" placeholder="Pasahitza"></input><b>&nbsp*</b></p>
+				<input type="submit" value="Erregistratu"></input>
+			</form></center>
+		</div>
+	</body>
+</html>
