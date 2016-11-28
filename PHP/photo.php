@@ -6,8 +6,8 @@
 	</head>
 	<body>
 		<center>
-			<div id="imgL"><img id="irudia1" src="../img/2218017.jpg" style="width:300px;height:300;margin-top:20px;">
-				<div style="margin-top:20px;">
+			<div id="imgL" style="border-style:solid;border-color:black;width:300px;height:300px;"><img id="irudia1" src="../img/2218017.jpg" style="width:250px;height:250px;margin-top:5px;">
+				<div >
 					<input type="button" name="like" id="like" style="border-style:solid;border-color:#123456;" value="like"></input>
 				</div>
 			</div>
