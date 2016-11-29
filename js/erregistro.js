@@ -7,9 +7,9 @@ function balioztatu(izena, eposta, pasahitza, pasahitzaKon){
 			ondo = false;
 			errorea +="IZENA: ez duzu bete.\n\n";
 		}
-		if((eposta.length < 1) && (!pEposta.test(eposta))){
+		if((eposta.length < 1) || (!pEposta.test(eposta))){
 			ondo = false;
-			errorea +="Eposta: ez duzu bete.\n\n";
+			errorea +="Eposta: ez duzu bete edo ez da egokia.\n\n";
 		}
 		if(pasahitza.length < 5){
 			ondo = false;
