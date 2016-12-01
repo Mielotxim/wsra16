@@ -41,9 +41,10 @@
 		$eposta = $_POST['erab'];
 		$pasahitza = $_POST['pass'];
 		include ("./konektatu.php");
+		$passcript=sha1($pasahitza);
 		$giz = $niremysqli->query("SELECT Pasahitza FROM erabiltzailea WHERE Eposta='$eposta'");
 		$row = $giz->fetch_assoc();
-		if($pasahitza===$row['Pasahitza']){
+		if($passcript===$row['Pasahitza']){
 			session_start();
 			$_SESSION['user']=$eposta;
 			header("location:./menuPropio.php");

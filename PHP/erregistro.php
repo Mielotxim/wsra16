@@ -1,7 +1,7 @@
 <?php
 	$izena=$_POST['izena'];
 	$abizenak="";
-	if(isset($_POST['abizenak']){
+	if(isset($_POST['abizenak'])){
 		$abizenak=$_POST['abizenak'];
 	}
 	$eposta=$_POST['eposta'];
