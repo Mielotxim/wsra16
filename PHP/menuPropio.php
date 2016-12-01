@@ -5,7 +5,7 @@ session_start();
 <html>
 	<head>
 		<meta name="tipo_contenido" content="text/html;" http-equiv="content-type" charset="utf-8">
-		<title><?=$_SESSION['user']?></title>
+		<title><?php echo $_SESSION['user'];?></title>
 		<!--<link rel='stylesheet' type='text/css' href='stylesPWS/style.css' />-->
 		<link rel="stylesheet" href="../css/bootstrap.min.css" />
 		<link rel="stylesheet" href="../css/custom.min.css" />
@@ -21,7 +21,7 @@ session_start();
 					<p><?php echo $_SESSION['user']?></p>
 					<div class="row">
 						<div class="col-md-offset-8">
-							<button onclick="location.href='../home.html'">Irten</button>
+							<button onclick="location.href='./logOut.php'">Irten</button>
 						</div>
 						</div>
 				</div>
@@ -32,8 +32,14 @@ session_start();
 		</div>
 		<div class="col-md-1">
 			<div class="row"><button onclick="location.href='../home.html'">Argazki bat Igo</button></div>
+			<div class="row"><button>no se que</button></div>
 		</div>
-		<?php include('./photo.php');?>
+		<?php
+				
+					include('./photo.php');
+		
+		
+		?>
 		
 	</body>
 </html>
