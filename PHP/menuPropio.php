@@ -31,7 +31,7 @@ session_start();
 			</div>
 		</div>
 		<div class="col-md-1">
-			<div class="row"><button onclick="location.href='../home.html'">Argazki bat Igo</button></div>
+			<div class="row"><button onclick="location.href='./argazkiaIgo.php'">Argazki bat Igo</button></div>
 			<div class="row"><button>no se que</button></div>
 		</div>
 		<?php
