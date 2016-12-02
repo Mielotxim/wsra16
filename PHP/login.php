@@ -26,7 +26,7 @@
 			<div>
 			<form id="formularioa" name="formularioa" method="POST" onSubmit="./login.php">
 				<p>Erabiltzailea: <input type="email" name="erab" id="erab" placeholder="Erabiltzailea" ></input></p>
-				<p>Pasahitza: <input type="password" name="pass" id="pass"></input></p>
+				<p>Pasahitza: <input type="password" name="pass" id="pass" placeholder="Pasahitza"></input></p>
 				<input type="submit" value="Ok" id="ok"></input>
 			</form>
 			</div>
