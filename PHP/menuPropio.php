@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(!isset($_SESSION['user'])){
+	header("Location:../home.html");
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,7 +12,6 @@ session_start();
 		<!--<link rel='stylesheet' type='text/css' href='stylesPWS/style.css' />-->
 		<link rel="stylesheet" href="../css/bootstrap.min.css" />
 		<link rel="stylesheet" href="../css/custom.min.css" />
-		<script src="./js/erregistro.js"></script>
 	</head>
 	<body style="background-color:#E6E6E6;">
 		<div class="jumbotron" id="jumbo" style="background-color:#48F87C; border-style:solid;border-color:#05A417;">
@@ -32,18 +34,11 @@ session_start();
 		</div>
 		<div class="col-md-1">
 			<div class="row"><button onclick="location.href='./argazkiaIgo.php'">Argazki bat Igo</button></div>
-			<div class="row"><button>no se que</button></div>
+			<div class="row"><button onclick="location.href='./datuakAldatu.php'">Datu pertsonalak aldatu</button></div>
 		</div>
 		<?php
-				
 					include('./photo.php');
-		
-		
 		?>
 		
 	</body>
 </html>
-
-
-<?php
-?>

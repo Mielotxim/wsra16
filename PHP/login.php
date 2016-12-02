@@ -49,5 +49,6 @@
 			$_SESSION['user']=$eposta;
 			header("location:./menuPropio.php");
 		}
+		$niremysqli->close();
 	}
 ?>

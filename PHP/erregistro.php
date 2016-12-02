@@ -19,7 +19,8 @@
 			$mysqli->errno . ") " . $mysqli->error;
 			die('Errorea: ' . $niremysqli->error);
 		}
-		else { echo "Erregistro bat gehitu da!";}
+		else { header("Location:menuPropio.php")}
 		echo "<p><a href='../home.html'>Home</a></p>";
+		$niremysqli->close();
 	}
 ?>
