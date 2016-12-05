@@ -15,7 +15,7 @@ if(!isset($_SESSION['user'])){
 	</head>
 	<body style="background-color:#E6E6E6;">
 		<div class="jumbotron" id="jumbo" style="background-color:#48F87C; border-style:solid;border-color:#05A417;">
-			<div class="row">	
+			<div class="row">
 				<div class="col-md-6 col-md-offset-3">
 					<center><h1>PHOTOQUE</h1></center>
 				</div>
@@ -25,7 +25,7 @@ if(!isset($_SESSION['user'])){
 						<div class="col-md-offset-8">
 							<button onclick="location.href='./logOut.php'">Irten</button>
 						</div>
-						</div>
+					</div>
 				</div>
 			</div>
 			<div class="row">
@@ -35,21 +35,29 @@ if(!isset($_SESSION['user'])){
 		<div class="col-md-1">
 			<div class="row"><button onclick="location.href='./argazkiaIgo.php'">Argazki bat Igo</button></div>
 			<div class="row"><button onclick="location.href='./datuakAldatu.php'">Datu pertsonalak aldatu</button></div>
-			<div class="row"><button onclick="location.href='./albuma.php'">Zure Albumak</button></div>
+			<div class="row"><button onclick="location.href='./menuPropio.php'">Zure Perfila</button></div>
+			<div class="row"><button onclick="location.href='./sortuAlbuma.php'">Sortu Album berri bat</button></div>
 		</div>
-		<div class="col-md-offset-10">
-			<p>Albumak:</p>
+			<center>
 			<?php
-				include("konektatu.php");
-				$giiz = $niremysqli->query("SELECT Izena  FROM albuma ");
-				while($roow= $giiz->fetch_assoc()){
-					echo "<div class='row'><b><a href='albuma.php?Izena=".$roow['Izena']."'>".$roow['Izena']."</a></b></div>";
-				}
+				include("./konektatu.php");
+				$giz = $niremysqli->query("SELECT Argazkia, Titulua FROM ARGAZKIA WHERE Eposta = '".$_SESSION['user']."' AND Albuma = '".$_GET['Izena']."'");
+					while($row = $giz->fetch_assoc()){
+						echo "<br><div style='border-style:solid;border-color:black;width:400px;height:500px;'>
+							<div class='row'><h1>".$row['Titulua']."</h1></div>
+							<div class='row'>
+								<img src='data:Irudia/jpeg;base64,".base64_encode( $row['Argazkia'] )."' width='250px' />
+							</div>
+							<div  class='row'>
+								<br><button name='like' id='like' style='border-style:solid;border-color:grey;' value='like'>
+									<span class='glyphicon glyphicon-heart' aria-hidden='true'></span>  LIKE 
+								</button></br>
+							</div>
+						</div></br>";
+					}
+				$giz->close();
+				$niremysqli->close();
 			?>
-		</div>
-		<?php
-					include('./photo.php');
-		?>
-		
+		</center>
 	</body>
 </html>

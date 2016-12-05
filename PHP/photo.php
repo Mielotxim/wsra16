@@ -1,12 +1,22 @@
 		<center>
-			<div id="imgL" style="border-style:solid;border-color:black;width:300px;height:300px;">
-				<div class="row">
-					<img id="irudia1" src="../img/2218017.jpg" style="width:250px;height:250px;margin-top:5px;">
-				</div>
-				<div  class="row">
-					<button name="like" id="like" style="border-style:solid;border-color:#123456;" value="like">
-						<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>  LIKE 
-					</button>
-				</div>
-			</div>
+			<?php
+				include("konektatu.php");
+				$giz = $niremysqli->query("SELECT Argazkia,Titulua FROM ARGAZKIA WHERE Eposta =  '".$_SESSION['user']."'");
+				
+					while($row = $giz->fetch_assoc()){
+						echo "<br><div style='border-style:solid;border-color:black;width:400px;height:500px;'>
+							<div class='row'><h1>".$row['Titulua']."</h1></div>
+							<div class='row'>
+								<img src='data:Irudia/jpeg;base64,".base64_encode( $row['Argazkia'] )."' width='250px' />
+							</div>
+							<div  class='row'>
+								<br><button name='like' id='like' style='border-style:solid;border-color:grey;' value='like'>
+									<span class='glyphicon glyphicon-heart' aria-hidden='true'></span>  LIKE 
+								</button></br>
+							</div>
+						</div></br>";
+					}
+				$giz->close();
+				$niremysqli->close();
+			?>
 		</center>

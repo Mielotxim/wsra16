@@ -32,6 +32,7 @@ if(!isset($_SESSION['user'])){
 					<div class="row">
 						<div class="col-md-offset-8">
 							<button onclick="location.href='./logOut.php'">Irten</button>
+							<button onclick="location.href='./menuPropio.php'">Zure Perfila</button>
 						</div>
 					</div>
 				</div>
@@ -40,27 +41,29 @@ if(!isset($_SESSION['user'])){
 				<center><h5>YOUR RUSKY PHOTOS</h5></center>
 			</div>
 		</div>
-		<form  id="erregistro" name="erregistro" method="post" onSubmit="todoBien()"  action="./argazkiaIgo.php" enctype="multipart/form-data">
-			<p>IRUDIA aukeratu: </p><input type="file" accept="image/*" id="irudi" name="irudi" onchange="loadFile(event)"></input>
-			<img id="image" name="image" style="height:400px;width:400px;display:none;position:absolute;right:35%;top:40%;"></img>
-			<br><p>IZENBURUA: </p><input type="text" id="izenburua" name="izenburua" placeholder="TXUPIPARTY EN LA PLAYA"></input></br>
-			<br><p>PRIBATUTASUNA: </p><input type="radio" id="private" name="private" value="private">Pribatua</input>
-															 <input type="radio" id="private" name="private" value="public">Publikoa</input>
-															 <input type="radio" id="private" name="private" value="friend">Lagunentzako</input></br>
-			<button name="balioztatu" id="balioztatu" style="border-style:solid;border-color:#895895;" value="balioztatu">
-						<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>  BAIEZTATU
-					</button>
-		</form>
+		<div class="col-md-offset-1">
+			<form  id="erregistro" name="erregistro" method="post" onSubmit="todoBien()"  action="./argazkiaIgo.php" enctype="multipart/form-data">
+				<p>IRUDIA aukeratu: </p><input type="file" accept="image/*" id="irudi" name="irudi" onchange="loadFile(event)"></input>
+				<img id="image" name="image" style="height:400px;width:400px;display:none;position:absolute;right:35%;top:40%;"></img>
+				<br><p>IZENBURUA [*]: </p><input type="text" id="izenburua" name="izenburua" placeholder="TXUPIPARTY EN LA PLAYA"></input></br>
+				<br><p>PRIBATUTASUNA [*]: </p><input type="radio" id="private" name="private" value="private">Pribatua</input>
+																 <input type="radio" id="private" name="private" value="public">Publikoa</input>
+																 <input type="radio" id="private" name="private" value="friend">Lagunentzako</input></br>
+				<br><p>ALBUMA: </p><input type="text" id="album" name="album" placeholder="Fotos Salou"></input></br>
+				<br><button name="balioztatu" id="balioztatu" style="border-style:solid;border-color:#895895;" value="balioztatu">
+					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>  BAIEZTATU
+				</button></br>
+			</form>
+		</div>
 	</body>
 </html>
 
 <?php
-	if(isset($_POST['private']) && strlen($_FILES['irudi']['tmp_name'])!=0){
-		echo "TO JAKEROO !";
+	if(isset($_POST['private']) && strlen($_FILES['irudi']['tmp_name'])!=0 && strlen($_POST['izenburua'])!=0){
 		include('konektatu.php');
 		$argazkia =addslashes(file_get_contents($_FILES['irudi']['tmp_name']));
-		$sql = "INSERT INTO argazkia(Argazkia,Kategoria,Titulua,Eposta)
-		VALUES('$argazkia' , '$_POST[private]' , '$_POST[izenburua]' , '$_SESSION[user]')";
+		$sql = "INSERT INTO argazkia(Argazkia,Kategoria,Titulua,Eposta,Albuma)
+		VALUES('$argazkia' , '$_POST[private]' , '$_POST[izenburua]' , '$_SESSION[user]' , '$_POST[album]')";
 		
 		if (!$niremysqli->query($sql)){
 			echo "Taularen sorrerak huts egin: (" .
@@ -72,8 +75,8 @@ if(!isset($_SESSION['user'])){
 		}
 	}
 	else{
-		echo "Datuak dagokien informazioekin bete itzazu mesedez";
-	}
+		echo "Datuak dagokien informazioekinbete itzazu mesedez.";
+		}
 	
 ?>
 		
