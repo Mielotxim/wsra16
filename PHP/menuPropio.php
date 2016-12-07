@@ -41,7 +41,7 @@ if(!isset($_SESSION['user'])){
 			<p>Albumak:</p>
 			<?php
 				include("konektatu.php");
-				$giiz = $niremysqli->query("SELECT Izena  FROM albuma ");
+				$giiz = $niremysqli->query("SELECT Izena  FROM albuma WHERE Egilea='".$_SESSION['user']."' ");
 				while($roow= $giiz->fetch_assoc()){
 					echo "<div class='row'><b><a href='albuma.php?Izena=".$roow['Izena']."'>".$roow['Izena']."</a></b></div>";
 				}
