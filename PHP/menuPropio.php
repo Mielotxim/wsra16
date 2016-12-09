@@ -36,12 +36,19 @@ if(!isset($_SESSION['user'])){
 			<div class="row"><button onclick="location.href='./argazkiaIgo.php'">Argazki bat Igo</button></div>
 			<div class="row"><button onclick="location.href='./datuakAldatu.php'">Datu pertsonalak aldatu</button></div>
 			<div class="row"><button onclick="location.href='./albuma.php'">Zure Albumak</button></div>
+			<?php 
+				if($_SESSION['user']==="admin@photoque.eus"){
+			?>
+			<div class="row"><button onclick="location.href='./adminKudeaketa.php'">Admin things</button></div>
+			<?php
+				}
+			?>
 		</div>
 		<div class="col-md-offset-10">
 			<p>Albumak:</p>
 			<?php
 				include("konektatu.php");
-				$giiz = $niremysqli->query("SELECT Izena  FROM albuma WHERE Egilea='".$_SESSION['user']."' ");
+				$giiz = $niremysqli->query("SELECT Izena FROM albuma WHERE Egilea='".$_SESSION['user']."' ");
 				while($roow= $giiz->fetch_assoc()){
 					echo "<div class='row'><b><a href='albuma.php?Izena=".$roow['Izena']."'>".$roow['Izena']."</a></b></div>";
 				}

@@ -19,7 +19,11 @@
 			$mysqli->errno . ") " . $mysqli->error;
 			die('Errorea: ' . $niremysqli->error);
 		}
-		else { header("Location:menuPropio.php");}
+		else { 
+			session_start();
+			$_SESSION['user']=$eposta;
+			header("Location:menuPropio.php");
+			}
 		echo "<p><a href='../home.html'>Home</a></p>";
 		$niremysqli->close();
 	}

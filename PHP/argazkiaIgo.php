@@ -75,7 +75,7 @@ if(!isset($_SESSION['user'])){
 		}
 	}
 	else{
-		echo "Datuak dagokien informazioekinbete itzazu mesedez.";
+		echo "Datuak dagokien informazioekin bete itzazu mesedez.";
 		}
 	
 ?>
