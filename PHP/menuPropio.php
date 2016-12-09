@@ -57,6 +57,5 @@ if(!isset($_SESSION['user'])){
 		<?php
 					include('./photo.php');
 		?>
-		
 	</body>
 </html>

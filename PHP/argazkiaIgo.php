@@ -43,13 +43,13 @@ if(!isset($_SESSION['user'])){
 		</div>
 		<div class="col-md-offset-1">
 			<form  id="erregistro" name="erregistro" method="post" onSubmit="todoBien()"  action="./argazkiaIgo.php" enctype="multipart/form-data">
-				<p>IRUDIA aukeratu: </p><input type="file" accept="image/*" id="irudi" name="irudi" onchange="loadFile(event)"></input>
+				<p>IRUDIA aukeratu: </p><input type="file" accept="image/*" id="irudi" name="irudi" onchange="loadFile(event)" required ></input>
 				<img id="image" name="image" style="height:400px;width:400px;display:none;position:absolute;right:35%;top:40%;"></img>
-				<br><p>IZENBURUA [*]: </p><input type="text" id="izenburua" name="izenburua" placeholder="TXUPIPARTY EN LA PLAYA"></input></br>
-				<br><p>PRIBATUTASUNA [*]: </p><input type="radio" id="private" name="private" value="private">Pribatua</input>
+				<br><p>IZENBURUA [*]: </p><input type="text" id="izenburua" name="izenburua" placeholder="TXUPIPARTY EN LA PLAYA" required ></input></br>
+				<br><p>PRIBATUTASUNA [*]: </p><input type="radio" id="private" name="private" value="private" checked="checked">Pribatua</input>
 																 <input type="radio" id="private" name="private" value="public">Publikoa</input>
 																 <input type="radio" id="private" name="private" value="friend">Lagunentzako</input></br>
-				<br><p>ALBUMA: </p><input type="text" id="album" name="album" placeholder="Fotos Salou"></input></br>
+				<br><p>ALBUMA: </p><input type="text" id="album" name="album" placeholder="Fotos Salou" ></input></br>
 				<br><button name="balioztatu" id="balioztatu" style="border-style:solid;border-color:#895895;" value="balioztatu">
 					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>  BAIEZTATU
 				</button></br>

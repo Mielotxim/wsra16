@@ -1,6 +1,6 @@
 <?php
 	include "konektatu.php";
-	$giz = $niremysqli->query("SELECT Titulua, Argazkia FROM argazkia WHERE Kategoria='public'");
+	$giz = $niremysqli->query("SELECT Titulua, Argazkia FROM argazkia WHERE Kategoria='public' order by Date DESC");
 	$popi=0;
 	$pipo=false;
 	while(($row = $giz->fetch_assoc()) && $pipo==false) {
