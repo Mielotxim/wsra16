@@ -35,7 +35,6 @@ if(!isset($_SESSION['user'])){
 		<div class="col-md-1">
 			<div class="row"><button onclick="location.href='./argazkiaIgo.php'">Argazki bat Igo</button></div>
 			<div class="row"><button onclick="location.href='./datuakAldatu.php'">Datu pertsonalak aldatu</button></div>
-			<div class="row"><button onclick="location.href='./albuma.php'">Zure Albumak</button></div>
 			<?php 
 				if($_SESSION['user']==="admin@photoque.eus"){
 			?>
