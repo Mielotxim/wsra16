@@ -17,7 +17,6 @@
 			$pipo=true;
 		}
 	}
-	echo "Hutsik dago";
 	$giz->close();
 	$niremysqli->close();
 ?>

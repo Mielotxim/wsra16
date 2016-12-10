@@ -67,7 +67,14 @@ else{
 					$giz->close();
 				}
 				else{
-					echo "aqui iran las peticiones a aceptar";
+					echo "<h4>Onartu beharreko erabiltzaileak:</h4>";
+					$giz = $niremysqli->query("SELECT Eposta,Onartua FROM erabiltzailea");
+					while ($row = $giz->fetch_assoc()){
+						if($row['Onartua']=='zintzilik') {
+							echo "<p><a href='./onartuErabiltzailea.php?user=$row[Eposta]'>$row[Eposta]</a></p>";
+						}
+					}
+					$giz->close();
 				}
 				$niremysqli->close();
 			?>

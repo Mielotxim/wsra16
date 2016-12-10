@@ -5,7 +5,7 @@
 	}
 	else{
 		include("konektatu.php");
-		if ($niremysqli->query("UPDATE erabiltzailea SET Onartua='blokeatua' WHERE Eposta='$_GET[user]'") === TRUE) {
+		if ($niremysqli->query("UPDATE erabiltzailea SET Onartua='onartua' WHERE Eposta='$_GET[user]'") === TRUE) {
 			header("Location:adminKudeaketa.php");
 		} else {
 			echo "Error deleting record: " . $niremysqli->error;

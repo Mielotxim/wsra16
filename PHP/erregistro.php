@@ -18,13 +18,11 @@
 			echo "Taularen sorrerak huts egin: (" .
 			$mysqli->errno . ") " . $mysqli->error;
 			die('Errorea: ' . $niremysqli->error);
+			echo "<p><a href='../home.html'>Home</a></p>";
 		}
 		else { 
-			session_start();
-			$_SESSION['user']=$eposta;
-			header("Location:menuPropio.php");
+			header("Location:../home.html");
 			}
-		echo "<p><a href='../home.html'>Home</a></p>";
 		$niremysqli->close();
 	}
 ?>
