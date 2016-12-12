@@ -12,6 +12,11 @@ if(!isset($_SESSION['user'])){
 		<!--<link rel='stylesheet' type='text/css' href='stylesPWS/style.css' />-->
 		<link rel="stylesheet" href="../css/bootstrap.min.css" />
 		<link rel="stylesheet" href="../css/custom.min.css" />
+		<script type="text/javascript">
+			function megusta(aux){
+				alert(aux);
+			}
+		</script>
 	</head>
 	<body style="background-color:#E6E6E6;">
 		<div class="jumbotron" id="jumbo" style="background-color:#48F87C; border-style:solid;border-color:#05A417;">

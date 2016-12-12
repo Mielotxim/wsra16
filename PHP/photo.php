@@ -1,7 +1,7 @@
 		<center>
 			<?php
 				include("konektatu.php");
-				$giz = $niremysqli->query("SELECT Argazkia,Titulua FROM ARGAZKIA WHERE Eposta =  '".$_SESSION['user']."'");
+				$giz = $niremysqli->query("SELECT id,Argazkia,Titulua FROM ARGAZKIA WHERE Eposta =  '".$_SESSION['user']."'");
 				
 					while($row = $giz->fetch_assoc()){
 						echo "<br><div style='border-style:solid;border-color:black;width:400px;height:500px;'>
@@ -10,7 +10,7 @@
 								<img src='data:Irudia/jpeg;base64,".base64_encode( $row['Argazkia'] )."' width='250px' />
 							</div>
 							<div  class='row'>
-								<br><button name='like' id='like' style='border-style:solid;border-color:grey;' value='like'>
+								<br><button name='".$row['Titulua']."' id='".$row['Titulua']."' style='border-style:solid;border-color:grey;' value='like' onclick='megusta(".$row['id'].".)'>
 									<span class='glyphicon glyphicon-heart' aria-hidden='true'></span>  LIKE 
 								</button></br>
 							</div>
