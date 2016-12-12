@@ -36,7 +36,6 @@ if(!isset($_SESSION['user'])){
 			<div class="row"><button onclick="location.href='./argazkiaIgo.php'">Argazki bat Igo</button></div>
 			<div class="row"><button onclick="location.href='./datuakAldatu.php'">Datu pertsonalak aldatu</button></div>
 			<div class="row"><button onclick="location.href='./menuPropio.php'">Zure Perfila</button></div>
-			<div class="row"><button onclick="location.href='./sortuAlbuma.php'">Sortu Album berri bat</button></div>
 		</div>
 			<center>
 			<?php
