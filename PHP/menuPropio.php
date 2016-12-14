@@ -14,7 +14,11 @@ if(!isset($_SESSION['user'])){
 		<link rel="stylesheet" href="../css/custom.min.css" />
 		<script type="text/javascript">
 			function megusta(aux){
-				alert(aux);
+				xhttp = new XMLHttpRequest();
+				xhttp.open("GET","http://localhost/photoque/php/like.php?foto="+aux, true);
+				xhttp.send();
+				document.getElementById(aux).value++;
+				
 			}
 		</script>
 	</head>

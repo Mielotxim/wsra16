@@ -1,7 +1,7 @@
 		<center>
 			<?php
 				include("konektatu.php");
-				$giz = $niremysqli->query("SELECT id,Argazkia,Titulua FROM ARGAZKIA WHERE Eposta =  '".$_SESSION['user']."'");
+				$giz = $niremysqli->query("SELECT id,Argazkia,Titulua,Likes FROM ARGAZKIA WHERE Eposta =  '".$_SESSION['user']."'");
 				
 					while($row = $giz->fetch_assoc()){
 						echo "<br><div style='border-style:solid;border-color:black;width:400px;height:500px;'>
@@ -13,7 +13,9 @@
 								<br><button name='".$row['Titulua']."' id='".$row['Titulua']."' style='border-style:solid;border-color:grey;' value='like' onclick='megusta(".$row['id'].".)'>
 									<span class='glyphicon glyphicon-heart' aria-hidden='true'></span>  LIKE 
 								</button></br>
+								<input type='textField' id='".$row['id']."' value='".$row['Likes']."' readonly />
 							</div>
+							
 						</div></br>";
 					}
 				$giz->close();
