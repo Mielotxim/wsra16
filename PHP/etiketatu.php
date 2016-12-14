@@ -43,6 +43,7 @@
 			<div class="row"><button onclick="location.href='./datuakAldatu.php'">Datu pertsonalak aldatu</button></div>
 			<div class="row"><button onclick="location.href='./sortuAlbuma.php'">Albuma sortu</button></div>
 			<div class="row"><button onclick="location.href='./etiketatu.php'">Etiketatu erabiltzaileak</button></div>
+			<div class="row"><button onclick="location.href='./nireEtiketak.php'">Ni agertzen naizen argazkiak</button></div>
 			<?php 
 				if($_SESSION['user']==="admin@photoque.eus"){
 			?>
