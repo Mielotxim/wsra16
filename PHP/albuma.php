@@ -33,9 +33,12 @@ if(!isset($_SESSION['user'])){
 			</div>
 		</div>
 		<div class="col-md-1">
+			<div class="row"><button onclick="location.href='./menuPropio.php'">Zure Perfilera bueltatu</button></div>
 			<div class="row"><button onclick="location.href='./argazkiaIgo.php'">Argazki bat Igo</button></div>
 			<div class="row"><button onclick="location.href='./datuakAldatu.php'">Datu pertsonalak aldatu</button></div>
-			<div class="row"><button onclick="location.href='./menuPropio.php'">Zure Perfila</button></div>
+			<div class="row"><button onclick="location.href='./sortuAlbuma.php'">Albuma sortu</button></div>
+			<div class="row"><button onclick="location.href='./etiketatu.php'">Etiketatu erabiltzaileak</button></div>
+			<div class="row"><button onclick="location.href='./nireEtiketak.php'">Ni agertzen naizen argazkiak</button></div>
 		</div>
 			<center>
 			<?php
