@@ -44,7 +44,7 @@ if(!isset($_SESSION['user'])){
 				?>
 					<p>Pasahitza: <input type="password" id="pass" name="pass" placeholder="Pasahitz Berria"></input></p>
 					<p>Konfirmatu pasahitza: <input type="password" id="passKonf" name="passKonf" placeholder="Pasahitza konfirmatu"></input></p>
-					<p><input type="password" id="konfimr" name="konfirm" placeholder="Pasahitza Zaharra"></input>&nbsp <input type="submit" value="Erregistratu"></input></p>
+					<p><input type="password" id="konfimr" name="konfirm" placeholder="Pasahitza Zaharra"></input>&nbsp <input type="submit" value="Aldatu"></input></p>
 				</form></center>
 			</div>
 		</div>
